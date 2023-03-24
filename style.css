@@ -1,0 +1,177 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    display: flex;
+    /*puts content at L/R center*/
+    justify-content: center;
+    /*puts content at up/down center*/
+    align-items: center;
+}
+
+/*referencing clock class*/
+.clock{
+    position: relative;
+    background-color: #5A94FD;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 10px rgba(0,0,0,.7)
+
+}
+
+/*using div targets all the numbers*/
+.numbers div{
+    /*fixes element to its parent*/
+    position: absolute;
+    z-index: 0;
+    font-size: 75px;
+    font-weight: bolder;
+    text-shadow: 1px 1px 10px rgba(0,0,0,.2);
+}
+
+/*now we do the specifics for each individual number*/
+.twelve{
+    color: #f50b94;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.three{
+    color: orange;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.six{
+    color: #8bbe1b ;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nine{
+    color: purple;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* for all dots */
+.dots div{
+    position: absolute;
+    font-size: 150px;
+    text-shadow: 1px 1px 10px rgba(0,0,0,.2);
+}
+
+/*now each individual dot specifications*/
+.dot1{
+    color: #f50b94;
+    bottom: 370px;
+    right: 115px;
+}
+
+.dot2{
+    color: #f50b94;
+    bottom: 290px;
+    right: 40px;
+}
+
+.dot3{
+    color: orange;
+    right: 40px;
+    top: 225px;
+}
+
+.dot4{
+    color: orange;
+    right: 115px;
+    top: 300px;
+}
+
+.dot5{
+    color: #8bbe1b ;
+    left: 115px;
+    top: 300px;
+}
+
+.dot6{
+    color: #8bbe1b ;
+    left: 40px;
+    top: 225px;
+}
+
+.dot7{
+    color: purple;
+    bottom: 290px;
+    left: 40px;
+}
+
+.dot8{
+    color: purple;
+    bottom: 370px;
+    left: 115px;
+}
+
+/* .class{} selector targets all elements with that class name */
+.arrows{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+/*pseudo class to create dot at center*/
+.arrows::before{
+    /*have to have this so that it displays*/
+    content: " ";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: purple;
+    border-radius: 50%;
+    z-index: 6;
+}
+
+/* .class div{} selector targets all <div> elements that are descendants of class*/
+.arrows div{
+    background-color: #8bbe1b;
+    position: absolute;
+    width: 14px;
+    height: 190px;
+    /*changes the opjects center point/point of reference */
+    transform-origin: bottom center;
+    bottom:50%;
+    z-index: 2;
+    /*makes the end curved, effecting outer two points*/
+    border-radius: 30% 30% 0 0;
+    text-shadow: 5px 5px 10px rgba(0,0,0,.9);
+}
+
+.arrows .hour{ 
+    background-color: #f50b94;
+    height: 120px;
+    transform: rotate(30deg);
+    z-index: 5;
+}
+
+.arrows .second{
+    background-color: orange;
+    width: 9px;
+    transform: rotate(250deg);
+}
+
+img{
+    max-width: 93%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 18px;
+    transform: translate(-50%);
+}
